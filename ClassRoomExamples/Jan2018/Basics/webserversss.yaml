@@ -1,0 +1,11 @@
+---
+- hosts: webserver
+  become: yes
+  tasks:
+  - name: update packages for Debian
+    apt:
+      update_cache: yes
+  - name: instal apache webserver
+    apt:
+      name: apache2
+      state: present
